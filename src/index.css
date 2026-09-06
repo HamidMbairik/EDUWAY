@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --color-royal: #155eef;
+  --color-royal-deep: #0b4bb3;
+  --color-royal-night: #081c40;
+  --color-cloud: #f8faff;
+  --color-surf: #eaf1ff;
+  --color-ink: #15233a;
+  --color-mute: #667085;
+  --color-flame: #f79009;
+  --color-flame-soft: #ffe2b8;
+
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 20px 50px -24px rgb(21 94 239 / 0.35);
+  --shadow-card: 0 12px 40px -16px rgb(11 75 179 / 0.25);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-blob: blob 16s ease-in-out infinite;
+  --animate-wiggle: wiggle 2.6s ease-in-out infinite;
+  --animate-glow: glow 3.5s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes blob {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(34px, -28px) scale(1.08);
+    }
+    66% {
+      transform: translate(-22px, 24px) scale(0.94);
+    }
+  }
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-8deg);
+    }
+    75% {
+      transform: rotate(8deg);
+    }
+  }
+  @keyframes glow {
+    0%,
+    100% {
+      opacity: 0.55;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cloud font-body text-ink antialiased;
+}
+
+::selection {
+  background: var(--color-flame);
+  color: #fff;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #155eef 0%, #4f8bff 55%, #f79009 120%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgb(248 250 255 / 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.bg-grain {
+  background-image: radial-gradient(rgb(21 94 239 / 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
