@@ -57,3 +57,7 @@ Defined once in `@theme` and referenced everywhere. No stray hex values.
 - The CTAs are front-end only — "Book my vibe check" opens a mail link; there's no backend behind the form.
 - Section reveals are handled by `Reveal.tsx`, which combines IntersectionObserver with a scroll-listener fallback so content is never left hidden if the observer is unavailable.
 - Screenshots are desktop viewport grabs of each section; the mobile layout intentionally stacks to two columns.
+
+---
+
+**Built from scratch by [Hamid Mbairik](https://github.com/HamidMbairik) · [CorgaDev](https://corgadev.vercel.app) — custom websites, no templates.**
